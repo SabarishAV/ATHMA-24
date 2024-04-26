@@ -1,0 +1,93 @@
+.contact {
+    width: 100%;
+    padding: 128px 13%;
+    box-sizing: border-box;
+}
+
+.contact .heading {
+    width: 100%;
+    color: #fafafa;
+    font-size: 5rem;
+    letter-spacing: 0.5rem;
+    font-family: 'Teko Medium', serif;
+}
+
+.contact .heading span {
+    padding: 0 1rem;
+}
+
+.contact .contact-body {
+    width: 100%;
+    padding-top: 128px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact .contact-body .card {
+    width: 19%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .7vw;
+    font-family: 'Space Mono', serif;
+    color: #fafafa;
+    margin: 24px 0;
+}
+
+.contact .contact-body .card img {
+    width: 50%;
+    /* height: 50%; */
+    border-radius: 50%;
+}
+
+.contact .contact-body .card * {
+    margin: 2px 0;
+    text-align: center;
+}
+
+.name {
+    font-size: .9vw;
+    margin-top: 0.5vh !important;
+    font-weight: bolder;
+}
+
+.contact-name {
+    opacity: 1;
+}
+
+.contact-body a {
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .contact {
+        padding: 64px 3%;
+        padding-bottom: 24px;
+        /* margin-top: -67vh; line to be removed */
+    }
+    .contact .heading {
+        font-size: 2.2rem;
+        letter-spacing: 0.5rem;
+    }
+    .contact .heading span {
+        padding: 0 0.75rem;
+        white-space: nowrap;
+    }
+    .contact .contact-body {
+        width: 100%;
+        padding: 40px 0;
+        padding-bottom: 0;
+        justify-content: space-evenly;
+    }
+    .contact .contact-body .card {
+        width: 45%;
+        font-size: 0.7rem;
+        margin: 16px 0;
+    }
+    .name {
+        font-size: 1.4em;
+    }
+}

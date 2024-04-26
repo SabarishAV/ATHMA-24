@@ -1,0 +1,512 @@
+#loader {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+    font-size: 100%;
+    background: #191a1a;
+    transition: opacity 1.5s ease-out;
+}
+
+@keyframes drop {
+    5% {
+        opacity: 0.5;
+    }
+    10% {
+        opacity: 1;
+        top: 3.78em;
+        transform: rotateX(-360deg);
+    }
+    40% {
+        opacity: 1;
+        top: 3.78em;
+        transform: rotateX(-360deg);
+    }
+    45% {
+        opacity: 0.5;
+    }
+    50%, 100% {
+        opacity: 0;
+        top: 6.94em
+    }
+}
+
+/* @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400); */
+
+html, body {
+    height: 100%;
+}
+
+.word {
+    font-family: "Bebas Neue";
+    font-size: 53px;
+    color: #DEDAD8;
+    letter-spacing: 26.5px;
+    text-align: center;
+    bottom: 0;
+    color: #fff;
+    left: 0;
+    line-height: 2.5em;
+    margin-top: 65vh;
+    right: 0;
+    position: absolute;
+    text-shadow: 0 0 10px rgba(50, 255, 50, 0.5), 0 0 5px rgba(100, 255, 100, 0.5);
+    top: 0
+}
+
+.word span {
+    display: inline-block;
+    transform: translateX(100%) scale(0.9);
+    transition: transform 500ms;
+}
+
+.word .done {
+    color: white;
+    transform: translateX(0) scale(1);
+}
+
+.overlay {
+    background-image: linear-gradient(transparent 0%, rgba(10, 16, 10, 0.5) 50%);
+    background-size: 1000px 2px;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.logo-container {
+    width: 100%;
+    height: 80vh;
+    font-size: 100%;
+    background: #191a1a;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    margin-bottom: 5vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.logo .row {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo .row>div {
+    position: relative;
+    background: transparent;
+    height: 100% !important;
+    animation: fill-bg 7s ease-in infinite;
+}
+
+.logo .row:nth-of-type(1)>div {
+    width: 10%;
+}
+
+.logo .row:nth-of-type(2)>div {
+    width: 10%;
+}
+
+.logo .row:nth-of-type(3)>div:nth-of-type(1) {
+    width: 10%;
+}
+
+.logo .row:nth-of-type(3)>div:nth-of-type(2) {
+    width: 28%;
+    margin-left: 8%;
+}
+
+.logo .row:nth-of-type(3)>div:nth-of-type(3) {
+    width: 28%;
+    margin-left: 8%;
+}
+
+.logo .row:nth-of-type(4)>div:nth-of-type(1) {
+    width: 28%;
+}
+
+.logo .row:nth-of-type(4)>div:nth-of-type(2) {
+    width: 28%;
+    margin-left: 8%;
+}
+
+.logo .row:nth-of-type(4)>div:nth-of-type(3) {
+    width: 28%;
+    margin-left: 8%;
+}
+
+.logo .row:nth-of-type(5)>div:nth-of-type(1) {
+    width: 10%;
+}
+
+.logo .row:nth-of-type(5)>div:nth-of-type(2) {
+    width: 28%;
+    margin-left: 8%;
+}
+
+.logo .row:nth-of-type(5)>div:nth-of-type(3) {
+    width: 28%;
+    margin-left: 8%;
+}
+
+.logo .row:nth-of-type(5)>div:nth-of-type(4) {
+    width: 10%;
+    margin-left: 8%;
+}
+
+.logo .row:nth-of-type(6)>div:nth-of-type(1) {
+    width: 28%;
+}
+
+.logo .row:nth-of-type(6)>div:nth-of-type(2) {
+    width: 10%;
+    margin-left: 8%;
+    stroke-dashoffset: 100
+}
+
+.logo .row>div>div {
+    background: #377CFD;
+    position: absolute;
+}
+
+.logo .row>div>div:nth-of-type(1) {
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: 0;
+    animation: left-enter 7s ease-out infinite;
+}
+
+.logo .row>div>div:nth-of-type(2) {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    animation: down-enter 7s ease-out infinite;
+}
+
+.logo .row>div>div:nth-of-type(3) {
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    right: 0;
+    animation: right-enter 7s ease-out infinite;
+}
+
+.logo .row>div>div:nth-of-type(4) {
+    width: 1px;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    animation: up-enter 7s ease-out infinite;
+}
+
+@keyframes up-enter {
+    0%, 16%, 90%, 100% {
+        clip-path: inset(100% 0 0 0);
+    }
+    5%, 15% {
+        clip-path: inset(0);
+    }
+}
+
+@keyframes down-enter {
+    0%, 16%, 90%, 100% {
+        clip-path: inset(0 0 100% 0);
+    }
+    5%, 15% {
+        clip-path: inset(0);
+    }
+}
+
+@keyframes left-enter {
+    0%, 5%, 16%, 90%, 100% {
+        clip-path: inset(0 100% 0 0);
+    }
+    10%, 15% {
+        clip-path: inset(0);
+    }
+}
+
+@keyframes right-enter {
+    0%, 5%, 16%, 90%, 100% {
+        clip-path: inset(0 0 0 100%);
+    }
+    10%, 15% {
+        clip-path: inset(0);
+    }
+}
+
+@keyframes fill-bg {
+    0%, 10%, 90%, 100% {
+        background: transparent;
+        box-shadow: none;
+    }
+    15%, 80% {
+        background: #377CFD;
+        box-shadow: 0 0 15px 0px #377CFD;
+        background: #377CFD;
+        box-shadow: 0 0 15px 0px #377CFD;
+    }
+}
+
+.deconstructed {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: transparent;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 0.95em;
+}
+
+.deconstructed>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #ffffff;
+    pointer-events: none;
+}
+
+.deconstructed>div:nth-child(1) {
+    -webkit-mask-image: linear-gradient(black 25%, transparent 25%);
+    mask-image: linear-gradient(black 25%, transparent 25%);
+    animation: deconstructed1 7s infinite;
+}
+
+.deconstructed>div:nth-child(2) {
+    -webkit-mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+    mask-image: linear-gradient(transparent 25%, black 25%, black 50%, transparent 50%);
+    animation: deconstructed2 7s infinite;
+}
+
+.deconstructed>div:nth-child(3) {
+    -webkit-mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+    mask-image: linear-gradient(transparent 50%, black 50%, black 75%, transparent 75%);
+    animation: deconstructed3 7s infinite;
+}
+
+.deconstructed>div:nth-child(4) {
+    -webkit-mask-image: linear-gradient(transparent 75%, black 75%);
+    mask-image: linear-gradient(transparent 75%, black 75%);
+    animation: deconstructed4 7s infinite;
+}
+
+@keyframes deconstructed1 {
+    0%, 20% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    33% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    43%, 83% {
+        transform: translateX(-0.2%);
+        opacity: 1;
+    }
+    90%, 100% {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+}
+
+@keyframes deconstructed2 {
+    0%, 20% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    32% {
+        transform: translateX(0.5%);
+        opacity: 1;
+    }
+    42%, 82% {
+        transform: translateX(-0.4%);
+        opacity: 1;
+    }
+    90%, 100% {
+        transform: translateX(-125%);
+        opacity: 0;
+    }
+}
+
+@keyframes deconstructed3 {
+    0%, 20% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    31% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    41%, 81% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    90%, 100% {
+        transform: translateX(-130%);
+        opacity: 0;
+    }
+}
+
+@keyframes deconstructed4 {
+    0%, 20% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    30% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    40%, 80% {
+        transform: translateX(-0.3%);
+        opacity: 1;
+    }
+    90%, 100% {
+        transform: translateX(-135%);
+        opacity: 0;
+    }
+}
+
+.typewriter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+#parent {
+    height: 44.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+#child::after {
+    white-space: nowrap;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.25rem;
+    color: rgba(255, 255, 255, .70);
+    content: "APOGEE'21";
+    transform: translate(7px);
+}
+
+#border {
+    border-bottom: solid 3px rgba(0, 255, 0, .75);
+    position: absolute;
+    right: -7px;
+    width: 20px;
+}
+
+/* Animation */
+
+#parent {
+    animation: animated-text 7s steps(40, end) infinite normal both
+}
+
+#child::after {
+    animation: change-text 7s steps(40, end) infinite normal both
+}
+
+#border {
+    animation: animated-cursor 800ms steps(40, end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text {
+    0%, 20%, 55%, 90%, 100% {
+        width: 0;
+    }
+    30%, 45% {
+        width: 130px;
+    }
+    65%, 80% {
+        width: 245px;
+    }
+}
+
+@keyframes animated-text-phone {
+    0%, 20%, 55%, 90%, 100% {
+        width: 0;
+    }
+    30%, 45% {
+        width: 95px;
+    }
+    65%, 80% {
+        width: 160.5px;
+    }
+}
+
+/* change text */
+
+@keyframes change-text {
+    0%, 50%, 100% {
+        content: "ATHMA '24";
+    }
+    60%, 80% {
+        content: "2nd - 3rd May";
+    }
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+    from {
+        border-bottom-color: rgba(0, 255, 0, .75);
+    }
+    to {
+        border-bottom-color: transparent;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+    #child::after {
+        font-size: 1.5rem;
+    }
+    #parent {
+        animation: animated-text-phone 7s steps(40, end) infinite normal both
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .first {
+        top: 6%;
+    }
+    .second {
+        top: 6%;
+    }
+    .word {
+        margin-top: 40vh;
+        font-size: 30px;
+        line-height: 46px;
+        letter-spacing: 15px;
+        text-align: center;
+    }
+    .logo-container {
+        height: 95vh;
+    }
+}
