@@ -411,7 +411,7 @@ html, body {
 }
 
 #border {
-    border-bottom: solid 3px rgba(0, 255, 0, .75);
+    border-bottom: solid 3px #D51E43;
     position: absolute;
     right: -7px;
     width: 20px;
@@ -472,7 +472,10 @@ html, body {
 
 @keyframes animated-cursor {
     from {
-        border-bottom-color: rgba(0, 255, 0, .75);
+        /* border-bottom-color: rgba(0, 255, 0, .75); */
+        /* border-bottom-color: red; */
+        border-bottom-color: #D51E43;
+
     }
     to {
         border-bottom-color: transparent;
